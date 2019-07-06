@@ -31,7 +31,7 @@
     "path": "@PROJECT_PATH@",
     "versionFirst": "4.9.6",
     "siteFonts": [],
-    "uniqCompNum": 15,
+    "uniqCompNum": 16,
     "versionPublish": "4.10.3",
     "favicon": "",
     "noImageResize": "",
@@ -818,6 +818,137 @@
           "_once": false,
           "_params": {},
           "_anchor": "features2-e"
+        },
+        {
+          "alias": false,
+          "_styles": {
+            "padding-top": "(@paddingTop * 15px)",
+            "padding-bottom": "(@paddingBottom * 15px)",
+            "& when (@bg-type = 'color')": {
+              "background-color": "@bg-value"
+            },
+            "& when (@bg-type = 'image')": {
+              "background-image": "url(@bg-value)"
+            },
+            ".ico": {
+              "position": "absolute",
+              "right": "30px",
+              "top": "12px",
+              "z-index": "100",
+              "span": {
+                "font-size": "1.5rem",
+                "color": "@iconColor"
+              }
+            },
+            ".cid-qY3KpudtHi .input": {
+              "padding": "10px 25px"
+            },
+            ".relative": {
+              "position": "relative"
+            },
+            ".form-row": {
+              "border-radius": "5px",
+              "border": "1px solid #e1e1e1",
+              "padding": "1.5rem 1.5rem",
+              "box-shadow": "0 5px 40px rgba(0, 0, 0, 0.15)",
+              "margin": "0.5rem"
+            },
+            ".row": {
+              "justify-content": "center",
+              "-webkit-justify-content": "center"
+            },
+            ".jq-selectbox__trigger-arrow": {
+              "display": "none"
+            },
+            ".jq-selectbox__select": {
+              "padding": "10px 25px",
+              "min-height": "20px",
+              "height": "100%"
+            },
+            ".form-control": {
+              "min-height": "49px",
+              "padding": "0",
+              "background-color": "transparent"
+            },
+            ".form-group": {
+              "text-align": "left",
+              "height": "0",
+              "border": "0px solid #CCC",
+              "border-radius": "5px",
+              "padding": "0"
+            },
+            ".jq-selectbox li.selected": {
+              "background-color": "@hover"
+            },
+            ".jq-selectbox li:hover": {
+              "background-color": "@hover"
+            },
+            ".jq-selectbox:hover .jq-selectbox__trigger-arrow": {
+              "border-top-color": "@hover"
+            },
+            ".mbr-iconfont-btn": {
+              "margin": "0"
+            },
+            ".jq-selectbox__dropdown": {
+              "top": "45px!important"
+            },
+            ".input": {
+              "padding": "10px 25px",
+              "min-height": "49px",
+              "background-color": "transparent",
+              "&:focus": {
+                "outline": "none",
+                "box-shadow": "0"
+              },
+              "&:active": {
+                "outline": "none",
+                "box-shadow": "0"
+              }
+            },
+            ".mbr-form .btn": {
+              "margin": "0!important",
+              "border-radius": "5px",
+              "margin-left": "15px!important",
+              "height": "49px",
+              "width": "240px",
+              "display": "block"
+            },
+            "@media (max-width: 991px)": {
+              ".col-md-6": {
+                "margin-bottom": "5rem"
+              },
+              ".col-md-12": {
+                "margin-bottom": "2rem"
+              },
+              ".align-left": {
+                "text-align": "center"
+              }
+            },
+            "@media (max-width: 576px)": {
+              ".input-group-btn": {
+                "margin": "auto"
+              },
+              ".form-row": {
+                "padding": "1.5rem 1rem"
+              }
+            },
+            ".mbr-section-title": {
+              "text-align": "center",
+              "color": "#000000"
+            },
+            ".mbr-section-sub-title": {
+              "color": "#656565",
+              "text-align": "center"
+            }
+          },
+          "_name": "header4",
+          "_customHTML": "<section class=\"header4\" plugins=\"formstyler\" group=\"Headers\" data-bg-video=\"{{bg.type == 'video' && bg.value.url}}\" mbr-class=\"{'mbr-parallax-background': bg.parallax}\">\n\n    <mbr-parameters>\n        <!-- Block parameters controls (Blue \"Gear\" panel) -->\n        <input type=\"range\" inline title=\"Top\" name=\"paddingTop\" min=\"0\" max=\"20\" value=\"4\">\n        <input type=\"range\" inline title=\"Bottom\" name=\"paddingBottom\" min=\"0\" max=\"20\" value=\"4\">\n        <header>Show/Hide</header>\n        <input type=\"checkbox\" title=\"Title\" name=\"showTitle\" checked>\n        <input type=\"checkbox\" title=\"Main Sub Title\" name=\"showMainsubtitle\">\n        <input type=\"checkbox\" title=\"Icon\" name=\"showIcon\" checked>\n        <header>Colors</header>\n        <input type=\"color\" title=\"Hover\" name=\"hover\" value=\"#1ec6b6\">\n        <input type=\"color\" title=\"Icon\" name=\"iconColor\" value=\"#656565\" condition=\"showIcon\">\n        <header>Background</header>\n        <fieldset type=\"background\" name=\"bg\" parallax>\n            <input type=\"image\" value=\"../_images/background2.jpg\" title=\"Image\">\n            <input type=\"color\" value=\"#ffffff\" title=\"Color\" selected>\n            <input type=\"video\" value=\"https://www.youtube.com/watch?v=JPe2mwq96cw\" title=\"Video\">\n        </fieldset>\n        <input type=\"checkbox\" title=\"Overlay\" name=\"overlay\" condition=\"bg.type !== 'color'\" checked>\n        <input type=\"color\" title=\"Color\" name=\"overlayColor\" value=\"#232323\" condition=\"overlay && bg.type !== 'color'\">\n        <input type=\"range\" inline title=\"Opacity\" name=\"overlayOpacity\" min=\"0\" max=\"1\" step=\"0.1\" value=\"0.5\" condition=\"overlay && bg.type !== 'color'\">\n        <!-- End block parameters -->\n    </mbr-parameters>\n\n    <div class=\"mbr-overlay\" mbr-if=\"overlay && bg.type!== 'color'\" mbr-style=\"{'opacity': overlayOpacity, 'background-color': overlayColor}\">\n    </div>\n    <div class=\"container\">\n\n        <h1 class=\"mbr-section-title mbr-bold align-left mbr-white pb-1 mbr-fonts-style\" mbr-theme-style=\"display-1\" mbr-if=\"showTitle\" data-app-selector=\".mbr-section-title\">Where do you want to go?</h1>\n\n        <h3 class=\"mbr-section-sub-title pb-4 mbr-normal mbr-fonts-style align-left\" mbr-theme-style=\"display-4\" mbr-if=\"showMainsubtitle\" data-app-selector=\".mbr-section-sub-title\">Lorem ipsum dolor sit amet, consectetur elit</h3>\n        <div class=\"row justify-content-center align-center\">\n            <div mbr-form class=\"media-container-column col-lg-12 col-md-10 col-sm-12 align-center\">\n\n                <div data-form-alert hidden>Thanks for filling out the form!</div>\n                <form class=\"mbr-form form-with-styler\" action=\"info@armanava.com\" method=\"post\" name=\"Mobirise Form\">\n                    <div class=\"row row-sm-offset form-row\">\n\n                        <div class=\"relative col-lg-3 col-md-12\" data-for=\"message\">\n                            <input type=\"text\" class=\"form-control input\" name=\"message\" rows=\"7\" placeholder=\"Destination \" data-form-field=\"Message\">\n                            <div class=\"ico\" mbr-if=\"showIcon\">\n                                <span mbr-icon class=\"mbr-iconfont mbri-search\"></span>\n                            </div>\n                        </div>\n\n\n\n                        <div class=\"relative col-lg-3 col-md-6\" data-for=\"name\">\n                            <div class=\"form-group\">\n\n                                <select type=\"text\" class=\"form-control\" name=\"type\" placeholder=\"Any Month\" data-form-field=\"Type\" required>\n                                    <option>Any Month</option>\n                                    <option>January</option>\n                                    <option>February</option>\n                                    <option>March</option>\n                                    <option>April</option>\n                                    <option>May</option>\n                                    <option>June</option>\n                                    <option>July</option>\n                                    <option>August</option>\n                                    <option>September</option>\n                                    <option>October</option>\n                                    <option>November</option>\n                                    <option>December</option>\n                                </select>\n                            </div>\n                            <div class=\"ico\" mbr-if=\"showIcon\">\n                                <span mbr-icon class=\"mbr-iconfont mbri-calendar\"></span>\n                            </div>\n\n                        </div>\n                        <div class=\"col-lg-3 col-md-6\" data-for=\"email\">\n                            <div class=\"form-group\">\n\n                                <select type=\"text\" class=\"form-control\" name=\"status\" placeholder=\"Sort By Date\" data-form-field=\"Status\" required>\n                                    <option>Sort By Date</option>\n                                    <option>Price Low to High</option>\n                                    <option>Price High to Low</option>\n                                    <option>Sort by Name</option>\n                                    <option>Sort by Popularity</option>\n                                    <option>Sort by Review Score</option>\n                                </select>\n\n                            </div>\n                            <div class=\"ico\" mbr-if=\"showIcon\">\n                                <span mbr-icon class=\"mbr-iconfont mbri-up-down\"></span>\n                            </div>\n                        </div>\n\n\n\n                        <span mbr-buttons mbr-theme-style=\"display-4\" data-toolbar=\"-mbrLink,-mbrBtnAdd,-mbrBtnMove\" class=\"input-group-btn\">\n                            <a href type=\"submit\" class=\"btn btn-md btn-form btn-primary\" data-app-placeholder=\"Type Text\">Search\n\n                            </a>\n                        </span>\n\n\n                    </div>\n\n\n                </form>\n            </div>\n        </div>\n    </div>\n</section>",
+          "_cid": "rvsxVXOYkk",
+          "_protectedParams": [],
+          "_global": false,
+          "_once": false,
+          "_params": {},
+          "_anchor": "header4-f"
         },
         {
           "alias": false,
